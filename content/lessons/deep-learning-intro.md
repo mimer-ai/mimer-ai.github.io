@@ -1,7 +1,6 @@
 +++
 title = "Introduction to Deep Learning"
 description = "A beginner-friendly introduction to artificial intelligence concepts."
-path = "/deep-learning-intro"
 
 [taxonomies]
 skill = ["ai", "programming"]
@@ -10,6 +9,7 @@ maturity = ["stable"]
 
 [extra]
 tags = ["python", "machine-learning"]
+external_url = "https://learn.mimer-ai.eu/deep-learning-intro/"
 +++
 
 This lesson covers the basics of AI, including history, applications, and ethical considerations.
