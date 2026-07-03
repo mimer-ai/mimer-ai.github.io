@@ -19,3 +19,7 @@ Key takeaways:
 - Learn the key steps in the MLOps process
 - Focus on automation, robustness and reproducibility
 - Hands-on experience with implementing MLOps using open-source tools (git, MLFlow)
+
+## 2026
+
+{{ youtube(id="NJNNE5wHo", playlist="PLGTUX1Ne84ec") }}

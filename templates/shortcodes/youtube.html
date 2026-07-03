@@ -1,0 +1,10 @@
+<div class="youtube-shortcode">
+    <iframe
+        src="https://www.youtube-nocookie.com/embed/{{id}}{% if playlist %}?list={{playlist}}{% endif %}{% if autoplay %}?autoplay=1{% endif %}"
+        title="{{title | default(value='Youtube') }}"
+        class="{{class | default(value='aspect-video w-lvw md:max-w-2xl lg:max-w-3xl') }}"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen
+    ></iframe>
+</div>

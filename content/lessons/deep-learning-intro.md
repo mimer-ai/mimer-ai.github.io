@@ -35,3 +35,7 @@ By the end of this course, you will understand:
 
 - Basic Python programming skills and familiarity with packages like NumPy, Pandas, and Matplotlib
 - Experience working with Jupyter notebooks (recommended but not mandatory)
+
+## 2026
+
+{{ youtube(id="BZx2gNaPXQA", playlist="PLlkhloJLLllHJzW_8p6z9L6YvuodNmeEg") }}
