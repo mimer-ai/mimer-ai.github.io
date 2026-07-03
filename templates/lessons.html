@@ -34,6 +34,23 @@
             <option value="stable">Stable</option>
         </select>
     </div>
+    <div class="flex flex-col gap-1 flex-grow min-w-[200px]">
+        <label class="text-sm font-medium text-slate-400">Search:</label>
+        <input
+            id="filter-search"
+            type="text"
+            placeholder="Search lessons..."
+            class="bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent w-full"
+        >
+    </div>
+    <div class="flex items-end">
+        <button
+            id="clear-filters"
+            class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+        >
+            Clear Filters
+        </button>
+    </div>
 </div>
 
 <!-- Lesson Grid -->
@@ -88,18 +105,21 @@
 </div>
 
 <script>
-// Client-side filtering that checks badge data attributes
+// Client-side filtering that checks badge data attributes and text search
 function filterLessons() {
     const skillFilter = document.getElementById('filter-skill').value.toLowerCase();
     const difficultyFilter = document.getElementById('filter-difficulty').value.toLowerCase();
     const maturityFilter = document.getElementById('filter-maturity').value.toLowerCase();
+    const searchQuery = document.getElementById('filter-search').value.toLowerCase();
     const lessons = document.querySelectorAll('#lesson-grid article');
 
     lessons.forEach(lesson => {
         let skillMatch = !skillFilter;
         let difficultyMatch = !difficultyFilter;
         let maturityMatch = !maturityFilter;
+        let searchMatch = !searchQuery;
 
+        // Check taxonomy filters
         if (!skillMatch || !difficultyMatch || !maturityMatch) {
             const skillBadges = lesson.querySelectorAll('[data-skill]');
             const difficultyBadges = lesson.querySelectorAll('[data-difficulty]');
@@ -122,7 +142,14 @@ function filterLessons() {
             }
         }
 
-        if (skillMatch && difficultyMatch && maturityMatch) {
+        // Check text search - simple string matching on title and description
+        if (searchQuery) {
+            const title = lesson.getAttribute('data-title').toLowerCase();
+            const description = lesson.getAttribute('data-description').toLowerCase();
+            searchMatch = title.includes(searchQuery) || description.includes(searchQuery);
+        }
+
+        if (skillMatch && difficultyMatch && maturityMatch && searchMatch) {
             lesson.style.display = '';
         } else {
             lesson.style.display = 'none';
@@ -134,5 +161,15 @@ function filterLessons() {
 document.getElementById('filter-skill').addEventListener('change', filterLessons);
 document.getElementById('filter-difficulty').addEventListener('change', filterLessons);
 document.getElementById('filter-maturity').addEventListener('change', filterLessons);
+document.getElementById('filter-search').addEventListener('input', filterLessons);
+
+// Clear filters button
+document.getElementById('clear-filters').addEventListener('click', function() {
+    document.getElementById('filter-skill').value = '';
+    document.getElementById('filter-difficulty').value = '';
+    document.getElementById('filter-maturity').value = '';
+    document.getElementById('filter-search').value = '';
+    filterLessons();
+});
 </script>
 {% endblock %}
