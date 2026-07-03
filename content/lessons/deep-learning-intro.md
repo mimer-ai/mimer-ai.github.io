@@ -1,6 +1,7 @@
 +++
 title = "Introduction to Deep Learning"
 description = "A beginner-friendly introduction to artificial intelligence concepts."
+path = "/deep-learning-intro"
 
 [taxonomies]
 skill = ["ai", "programming"]
