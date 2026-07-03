@@ -10,7 +10,6 @@ This is a static site built with [Zola](https://www.getzola.org/), a fast static
 ├── zola.toml                    # Zola configuration file
 ├── content/                     # Content files (Markdown)
 │   ├── _index.md                # Home page content
-│   ├── blog.md                  # Blog section
 │   └── lessons/                 # Lessons section
 │       ├── _index.md            # Lessons index page
 │       └── deep-learning-intro.md # Example lesson
@@ -24,8 +23,6 @@ This is a static site built with [Zola](https://www.getzola.org/), a fast static
 │   ├── index.html               # Home page template
 │   ├── page.html                # Single page template (lessons)
 │   ├── lessons.html             # Lessons grid with filters
-│   ├── blog.html                # Blog listing template
-│   ├── blog-page.html           # Blog post template
 │   └── partials/                # Reusable template partials
 │       └── badges.html          # Taxonomy badge rendering
 └── themes/                      # Zola themes (empty)
