@@ -1,0 +1,33 @@
+{# Badges partial template - renders skill, difficulty, and maturity badges #}
+{% if page.taxonomies and page.taxonomies.skill %}
+    {% for skill in page.taxonomies.skill %}
+        {% set skill_lower = skill | lower %}
+        <span
+            class="px-3 py-1 rounded-full text-xs font-medium text-white badge-skill"
+            style="background-color: {{ config.extra.badge_colors.skill[skill_lower] | default(value="#6366f1") }};"
+            data-skill="{{ skill | lower }}"
+        >{{ skill }}</span>
+    {% endfor %}
+{% endif %}
+
+{% if page.taxonomies and page.taxonomies.difficulty %}
+    {% for difficulty in page.taxonomies.difficulty %}
+        {% set diff_lower = difficulty | lower %}
+        <span
+            class="px-3 py-1 rounded-full text-xs font-medium text-white badge-difficulty"
+            style="background-color: {{ config.extra.badge_colors.difficulty[diff_lower] | default(value="#10b981") }};"
+            data-difficulty="{{ difficulty | lower }}"
+        >{{ difficulty }}</span>
+    {% endfor %}
+{% endif %}
+
+{% if page.taxonomies and page.taxonomies.maturity %}
+    {% for maturity in page.taxonomies.maturity %}
+        {% set mat_lower = maturity | lower %}
+        <span
+            class="px-3 py-1 rounded-full text-xs font-medium text-white badge-maturity"
+            style="background-color: {{ config.extra.badge_colors.maturity[mat_lower] | default(value="#2563eb") }};"
+            data-maturity="{{ maturity | lower }}"
+        >{{ maturity }}</span>
+    {% endfor %}
+{% endif %}
