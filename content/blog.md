@@ -1,8 +1,7 @@
 +++
-title = "Lesson Library"
-sort_by = "date"
+title = "Blog"
 template = "blog.html"
 page_template = "blog-page.html"
 +++
 
-aa
+Blog content

@@ -1,14 +1,47 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h1 class="title">
-  {{ section.title }}
-</h1>
-<ul>
-  <!-- If you are using pagination, section.pages will be empty.
-       You need to use the paginator object -->  
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endblock content %}
+<div class="filters">
+    <div class="filter-group">
+        <label>Skill:</label>
+        <select id="filter-skill">
+            <option value="">All</option>
+            <option value="ai">AI</option>
+            <option value="data">Data</option>
+            <option value="programming">Programming</option>
+        </select>
+    </div>
+    <div class="filter-group">
+        <label>Difficulty:</label>
+        <select id="filter-difficulty">
+            <option value="">All</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select>
+    </div>
+</div>
+
+<div class="lesson-grid" id="lesson-grid">
+    {% for page in section.pages %}
+    {% if page.tags %}
+    <article
+        class="lesson-card"
+        data-title="{{ page.title }}"
+        data-description="{{ page.description }}"
+        data-tags="{{ page.tags | json_encode | safe }}"
+        data-skill="{{ page.skill | json_encode | safe }}"
+        data-difficulty="{{ page.difficulty }}"
+    >
+        <h2>{{ page.title }}</h2>
+        <p>{{ page.description }}</p>
+        <div class="badge-container">
+            {% for skill in page.skill %}
+            <span class="badge skill-{{ skill }}">{{ skill }}</span>
+            {% endfor %}
+            <span class="badge difficulty-{{ page.difficulty }}">{{ page.difficulty }}</span>
+        </div>
+    </article>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
