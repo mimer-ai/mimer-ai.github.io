@@ -7,10 +7,23 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+[site]
+title = "Lesson Library"
+base_url = "/"
+
 [markdown]
 
 [markdown.highlighting]
 theme = "catppuccin-mocha"
 
+[search]
+index_format = "fuse_javascript" # or "fuse_json"
+
 [extra]
 # Put all your custom variables here
+#din
+# Define badge colors for Skill and Difficulty Level
+badge_colors = {
+    skill = { ai = "#6366f1", data = "#4f46e5", programming = "#8b5cf6" },
+    difficulty = { beginner = "#10b981", intermediate = "#f59e0b", advanced = "#ef4444" }
+}
