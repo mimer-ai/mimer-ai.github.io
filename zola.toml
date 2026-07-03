@@ -48,3 +48,115 @@ badge_colors = {
     difficulty = { beginner = "text-emerald-400", intermediate = "text-amber-400", advanced = "text-red-400" },
     maturity = { alpha = "text-sky-400", beta = "text-blue-400", stable = "text-blue-500" }
 }
+
+# Navigation configuration
+[extra.nav]
+logo_src = "https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-scaled.png"
+logo_alt = "The logo of Mimer AI Factory. Straight modern white lines, with one blue line in the second M."
+logo_url = "https://mimer-ai.eu"
+library_text = "Library"
+library_url = "/"
+get_access_url = "https://mimer-ai.eu/all-services/access-to-compute-resources/"
+
+# Main header navigation links
+[[extra.nav.main_links]]
+name = "Events & Learning"
+url = "https://mimer-ai.eu/events-and-learning"
+
+[[extra.nav.main_links]]
+name = "Services"
+url = "#"
+dropdown = true
+
+[[extra.nav.main_links.sub_links]]
+name = "All services"
+url = "https://mimer-ai.eu/all-services/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Expert support"
+url = "https://mimer-ai.eu/all-services/expert-support/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Trustworthy AI"
+url = "https://mimer-ai.eu/all-services/trustworthy-ai/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Access to compute resources"
+url = "https://mimer-ai.eu/all-services/access-to-compute-resources/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Data access and management"
+url = "https://mimer-ai.eu/all-services/data-access-and-management/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Training and upskilling"
+url = "https://mimer-ai.eu/all-services/training-and-upskilling/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Ecosystem services"
+url = "https://mimer-ai.eu/all-services/ecosystem-services/"
+
+[[extra.nav.main_links]]
+name = "Client stories"
+url = "https://mimer-ai.eu/client-stories/"
+
+[[extra.nav.main_links]]
+name = "News & blog"
+url = "https://mimer-ai.eu/news-and-blog/"
+
+[[extra.nav.main_links]]
+name = "About"
+url = "#"
+dropdown = true
+
+[[extra.nav.main_links.sub_links]]
+name = "About Mimer"
+url = "https://mimer-ai.eu/about/about-mimer/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Careers"
+url = "https://mimer-ai.eu/about/careers/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Ecosystem"
+url = "https://mimer-ai.eu/about/ecosystem/"
+
+[[extra.nav.main_links.sub_links]]
+name = "FAQ"
+url = "https://mimer-ai.eu/about/faq/"
+
+[[extra.nav.main_links.sub_links]]
+name = "Brand assets"
+url = "https://mimer-ai.eu/about/brand-assets/"
+
+[[extra.nav.main_links]]
+name = "Contact us"
+url = "https://mimer-ai.eu/contact-us/"
+
+# Footer configuration
+[extra.footer]
+quick_links_title = "Quick links"
+
+[[extra.footer.quick_links]]
+name = "About Mimer"
+url = "https://mimer-ai.eu/about/about-mimer/"
+
+[[extra.footer.quick_links]]
+name = "Careers"
+url = "https://mimer-ai.eu/about/careers/"
+
+[[extra.footer.quick_links]]
+name = "Contact us"
+url = "https://mimer-ai.eu/contact-us/"
+
+[[extra.footer.quick_links]]
+name = "Events and learning"
+url = "https://mimer-ai.eu/events-and-learning"
+
+[[extra.footer.quick_links]]
+name = "All services"
+url = "https://mimer-ai.eu/all-services/"
+
+[[extra.footer.quick_links]]
+name = "Privacy Policy"
+url = "https://mimer-ai.eu/privacy-policy/"

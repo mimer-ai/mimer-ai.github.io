@@ -3,12 +3,12 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <a
-                    href="https://mimer-ai.eu"
+                    href="{{ config.extra.nav.logo_url }}"
                     class="flex items-center space-x-2 mb-4"
                 >
                     <img
-                        src="https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-scaled.png"
-                        alt="The logo of Mimer AI Factory. Straight modern white lines, with one blue line in the second M."
+                        src="{{ config.extra.nav.logo_src }}"
+                        alt="{{ config.extra.nav.logo_alt }}"
                         class="h-10 w-auto"
                     />
                 </a>
@@ -33,54 +33,25 @@
                 </a>
             </div>
             <div>
-                <h3 class="text-white font-semibold mb-4">Quick links</h3>
+                <h3 class="text-white font-semibold mb-4">
+                    {{ config.extra.footer.quick_links_title }}
+                </h3>
                 <ul class="space-y-2">
-                    <li>
-                        <a
-                            href="https://mimer-ai.eu/about/about-mimer/"
-                            class="text-slate-400 hover:text-white transition-colors"
-                            >About Mimer</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://mimer-ai.eu/about/careers/"
-                            class="text-slate-400 hover:text-white transition-colors"
-                            >Careers</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://mimer-ai.eu/contact-us/"
-                            class="text-slate-400 hover:text-white transition-colors"
-                            >Contact us</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://mimer-ai.eu/events-and-learning"
-                            class="text-slate-400 hover:text-white transition-colors"
-                            >Events and learning</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://mimer-ai.eu/all-services/"
-                            class="text-slate-400 hover:text-white transition-colors"
-                            >All services</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://mimer-ai.eu/privacy-policy/"
-                            class="text-slate-400 hover:text-white transition-colors"
-                            >Privacy Policy</a
-                        >
-                    </li>
+                    {% for link in config.extra.footer.quick_links %}
+                        <li>
+                            <a
+                                href="{{ link.url }}"
+                                class="text-slate-400 hover:text-white transition-colors"
+                                >{{ link.name }}</a
+                            >
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
             <div>
-                <h3 class="text-white font-semibold mb-4">Contact Info</h3>
+                <h3 class="text-white font-semibold mb-4">
+                    Contact Info
+                </h3>
                 <p class="text-slate-400">info@mimer-ai.eu</p>
             </div>
         </div>
