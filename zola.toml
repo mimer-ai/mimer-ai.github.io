@@ -25,7 +25,26 @@ index_format = "fuse_javascript" # or "fuse_json"
 # Put all your custom variables here
 # Define badge colors for Skill, Difficulty Level, and Maturity
 badge_colors = {
-    skill = { ai = "#6366f1", data = "#4f46e5", programming = "#8b5cf6" },
+    skill = {
+        ai = "#6366f1",
+        data = "#4f46e5",
+        programming = "#8b5cf6",
+        julia = "#9333ea",
+        data_science = "#06b6d4",
+        hpc = "#f97316",
+        kubernetes = "#3b82f6",
+        containers = "#f59e0b",
+        cloud = "#0ea5e9",
+        life_science = "#10b981",
+        machine_learning = "#ec4899",
+        mlops = "#8b5cf6",
+        agentic = "#6366f1",
+        gpu = "#ef4444",
+        distributed_computing = "#f59e0b",
+        pytorch = "#f97316",
+        parallel_computing = "#84cc16",
+        devops = "#14b8a6"
+    },
     difficulty = { beginner = "#10b981", intermediate = "#f59e0b", advanced = "#ef4444" },
     maturity = { alpha = "#93c5fd", beta = "#60a5fa", stable = "#2563eb" }
 }
