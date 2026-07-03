@@ -1,11 +1,10 @@
 {# Badges partial template - renders skill, difficulty, and maturity badges #}
-{# Skill badges - pill shaped, inline #}
+{# Skill badges - rounded rectangles, inline #}
 {% if page.taxonomies and page.taxonomies.skill %}
     {% for skill in page.taxonomies.skill %}
         {% set skill_lower = skill | lower %}
         <span
-            class="px-3 py-1 rounded-full text-xs font-medium text-white badge-skill"
-            style="background-color: {{ config.extra.badge_colors.skill[skill_lower] | default(value="#6366f1") }};"
+            class="px-3 py-1 rounded-md text-xs font-medium text-white {{ config.extra.badge_colors.skill[skill_lower] | default(value="bg-indigo-700") }} badge-skill"
             data-skill="{{ skill | lower }}"
         >{{ skill }}</span>
     {% endfor %}
@@ -24,8 +23,7 @@
             >
                 <span class="text-slate-400 mr-1.5">difficulty:</span>
                 <span
-                    class="text-white font-semibold"
-                    style="color: {{ config.extra.badge_colors.difficulty[diff_lower] | default(value="#10b981") }};"
+                    class="font-semibold {{ config.extra.badge_colors.difficulty[diff_lower] | default(value="text-emerald-400") }}"
                 >{{ difficulty }}</span>
             </span>
         {% endfor %}
@@ -41,8 +39,7 @@
             >
                 <span class="text-slate-400 mr-1.5">maturity:</span>
                 <span
-                    class="text-white font-semibold"
-                    style="color: {{ config.extra.badge_colors.maturity[mat_lower] | default(value="#2563eb") }};"
+                    class="font-semibold {{ config.extra.badge_colors.maturity[mat_lower] | default(value="text-blue-500") }}"
                 >{{ maturity }}</span>
             </span>
         {% endfor %}

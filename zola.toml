@@ -26,25 +26,25 @@ index_format = "fuse_javascript" # or "fuse_json"
 # Define badge colors for Skill, Difficulty Level, and Maturity
 badge_colors = {
     skill = {
-        ai = "#6366f1",
-        data = "#4f46e5",
-        programming = "#8b5cf6",
-        julia = "#9333ea",
-        data_science = "#06b6d4",
-        hpc = "#f97316",
-        kubernetes = "#3b82f6",
-        containers = "#f59e0b",
-        cloud = "#0ea5e9",
-        life_science = "#10b981",
-        machine_learning = "#ec4899",
-        mlops = "#8b5cf6",
-        agentic = "#6366f1",
-        gpu = "#ef4444",
-        distributed_computing = "#f59e0b",
-        pytorch = "#f97316",
-        parallel_computing = "#84cc16",
-        devops = "#14b8a6"
+        ai = "bg-indigo-700",
+        data = "bg-indigo-800",
+        programming = "bg-violet-700",
+        julia = "bg-purple-700",
+        data_science = "bg-cyan-700",
+        hpc = "bg-orange-700",
+        kubernetes = "bg-blue-700",
+        containers = "bg-amber-700",
+        cloud = "bg-sky-700",
+        life_science = "bg-emerald-700",
+        machine_learning = "bg-pink-600",
+        mlops = "bg-violet-700",
+        agentic = "bg-indigo-700",
+        gpu = "bg-red-700",
+        distributed_computing = "bg-amber-700",
+        pytorch = "bg-orange-700",
+        parallel_computing = "bg-lime-700",
+        devops = "bg-teal-600"
     },
-    difficulty = { beginner = "#10b981", intermediate = "#f59e0b", advanced = "#ef4444" },
-    maturity = { alpha = "#93c5fd", beta = "#60a5fa", stable = "#2563eb" }
+    difficulty = { beginner = "text-emerald-400", intermediate = "text-amber-400", advanced = "text-red-400" },
+    maturity = { alpha = "text-sky-400", beta = "text-blue-400", stable = "text-blue-500" }
 }
