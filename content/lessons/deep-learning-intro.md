@@ -1,8 +1,13 @@
 +++
 title = "Introduction to Deep Learning"
 description = "A beginner-friendly introduction to artificial intelligence concepts."
+
+[taxonomies]
 skill = ["ai", "programming"]
-difficulty = "beginner"
+difficulty = ["beginner"]
+maturity = ["stable"]
+
+[extra]
 tags = ["python", "machine-learning"]
 +++
 

@@ -25,6 +25,15 @@
             <option value="advanced">Advanced</option>
         </select>
     </div>
+    <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-slate-400">Maturity:</label>
+        <select id="filter-maturity" class="bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+            <option value="">All</option>
+            <option value="alpha">Alpha</option>
+            <option value="beta">Beta</option>
+            <option value="stable">Stable</option>
+        </select>
+    </div>
 </div>
 
 <!-- Lesson Grid -->
@@ -38,10 +47,92 @@
         <h2 class="text-xl font-semibold text-white mb-3 group-hover:text-indigo-400 transition-colors">{{ page.title }}</h2>
         <p class="text-slate-400 mb-4">{{ page.description | default(value="No description available") }}</p>
         <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-full text-xs font-medium bg-indigo-600 text-white">AI</span>
-            <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-600 text-white">Beginner</span>
+            {# Skill badges #}
+            {% if page.taxonomies and page.taxonomies.skill %}
+                {% for skill in page.taxonomies.skill %}
+                    {% set skill_lower = skill | lower %}
+                    <span
+                        class="px-3 py-1 rounded-full text-xs font-medium text-white badge-skill"
+                        style="background-color: {{ config.extra.badge_colors.skill[skill_lower] | default(value="#6366f1") }};"
+                        data-skill="{{ skill | lower }}"
+                    >{{ skill }}</span>
+                {% endfor %}
+            {% endif %}
+
+            {# Difficulty badges #}
+            {% if page.taxonomies and page.taxonomies.difficulty %}
+                {% for difficulty in page.taxonomies.difficulty %}
+                    {% set diff_lower = difficulty | lower %}
+                    <span
+                        class="px-3 py-1 rounded-full text-xs font-medium text-white badge-difficulty"
+                        style="background-color: {{ config.extra.badge_colors.difficulty[diff_lower] | default(value="#10b981") }};"
+                        data-difficulty="{{ difficulty | lower }}"
+                    >{{ difficulty }}</span>
+                {% endfor %}
+            {% endif %}
+
+            {# Maturity badges #}
+            {% if page.taxonomies and page.taxonomies.maturity %}
+                {% for maturity in page.taxonomies.maturity %}
+                    {% set mat_lower = maturity | lower %}
+                    <span
+                        class="px-3 py-1 rounded-full text-xs font-medium text-white badge-maturity"
+                        style="background-color: {{ config.extra.badge_colors.maturity[mat_lower] | default(value="#2563eb") }};"
+                        data-maturity="{{ maturity | lower }}"
+                    >{{ maturity }}</span>
+                {% endfor %}
+            {% endif %}
         </div>
     </article>
     {% endfor %}
 </div>
+
+<script>
+// Client-side filtering that checks badge data attributes
+function filterLessons() {
+    const skillFilter = document.getElementById('filter-skill').value.toLowerCase();
+    const difficultyFilter = document.getElementById('filter-difficulty').value.toLowerCase();
+    const maturityFilter = document.getElementById('filter-maturity').value.toLowerCase();
+    const lessons = document.querySelectorAll('#lesson-grid article');
+
+    lessons.forEach(lesson => {
+        let skillMatch = !skillFilter;
+        let difficultyMatch = !difficultyFilter;
+        let maturityMatch = !maturityFilter;
+
+        if (!skillMatch || !difficultyMatch || !maturityMatch) {
+            const skillBadges = lesson.querySelectorAll('[data-skill]');
+            const difficultyBadges = lesson.querySelectorAll('[data-difficulty]');
+            const maturityBadges = lesson.querySelectorAll('[data-maturity]');
+
+            if (skillFilter) {
+                skillBadges.forEach(b => {
+                    if (b.getAttribute('data-skill') === skillFilter) skillMatch = true;
+                });
+            }
+            if (difficultyFilter) {
+                difficultyBadges.forEach(b => {
+                    if (b.getAttribute('data-difficulty') === difficultyFilter) difficultyMatch = true;
+                });
+            }
+            if (maturityFilter) {
+                maturityBadges.forEach(b => {
+                    if (b.getAttribute('data-maturity') === maturityFilter) maturityMatch = true;
+                });
+            }
+        }
+
+        if (skillMatch && difficultyMatch && maturityMatch) {
+            lesson.style.display = '';
+        } else {
+            lesson.style.display = 'none';
+        }
+    });
+}
+
+// Add event listeners
+document.getElementById('filter-skill').addEventListener('change', filterLessons);
+document.getElementById('filter-difficulty').addEventListener('change', filterLessons);
+document.getElementById('filter-maturity').addEventListener('change', filterLessons);
+</script>
 {% endblock %}

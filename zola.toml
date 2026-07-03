@@ -7,6 +7,12 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+taxonomies = [
+    { name = "skill", feed = false, render = false },
+    { name = "difficulty", feed = false, render = false },
+    { name = "maturity", feed = false, render = false },
+]
+
 [markdown]
 
 [markdown.highlighting]
@@ -17,9 +23,9 @@ index_format = "fuse_javascript" # or "fuse_json"
 
 [extra]
 # Put all your custom variables here
-#din
-# Define badge colors for Skill and Difficulty Level
+# Define badge colors for Skill, Difficulty Level, and Maturity
 badge_colors = {
     skill = { ai = "#6366f1", data = "#4f46e5", programming = "#8b5cf6" },
-    difficulty = { beginner = "#10b981", intermediate = "#f59e0b", advanced = "#ef4444" }
+    difficulty = { beginner = "#10b981", intermediate = "#f59e0b", advanced = "#ef4444" },
+    maturity = { alpha = "#93c5fd", beta = "#60a5fa", stable = "#2563eb" }
 }
