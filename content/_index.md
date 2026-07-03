@@ -1,6 +1,5 @@
 +++
-title = "Mimer AI - Lesson Library"
-template = "index.html"
+title = "Welcome to Mimer AI Learning"
 +++
 
-Welcome to the Mimer AI Lesson Library.
+Redirecting to lessons...

@@ -1,116 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mimer AI Factory</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="{{ get_url(path="/mimer.css") }}">
-    <!--<script src="/js/lunr.min.js"></script>-->
-      <!--<script src="https://unpkg.com/lunr/lunr.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.4.1"></script>
-    <script src="/js/search.js"></script>
-</head>
-<body>
-    <!-- Mobile Header -->
-    <header class="header header--mobile">
-        <a href="#" aria-label="Mimer AI Factory">
-            <img src="https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-2048x869.png" alt="Mimer AI Factory Logo" class="logo">
-        </a>
-        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-        <div id="mobile-menu" class="mobile-menu">
-            <ul class="mobile-menu__list">
-                <li class="mobile-menu__item"><a href="#" class="nav-link mobile-menu__link">Events & Learning</a></li>
-                <li class="mobile-menu__item"><a href="#" class="nav-link mobile-menu__link">Services</a></li>
-                <li class="mobile-menu__item"><a href="#" class="nav-link mobile-menu__link">Success stories</a></li>
-                <li class="mobile-menu__item"><a href="#" class="nav-link mobile-menu__link">News & blog</a></li>
-                <li class="mobile-menu__item"><a href="#" class="nav-link mobile-menu__link">About</a></li>
-                <li class="mobile-menu__item"><a href="#" class="nav-link mobile-menu__link">Contact us</a></li>
-            </ul>
-        </div>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Mimer AI Factory</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ["Inter", "sans-serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <!--<script src="/js/lunr.min.js"></script>-->
+        <!--<script src="https://unpkg.com/lunr/lunr.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.4.1"></script>
+        <script src="/js/search.js"></script>
+    </head>
+    <body class="bg-slate-900 text-gray-100 font-sans antialiased">
+        <header
+            class="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-800"
+        >
+            <div
+                class="container mx-auto px-4 py-4 flex items-center justify-between"
+            >
+                <a href="/" class="flex items-center space-x-2">
+                    <img
+                        src="https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-2048x869.png"
+                        alt="Mimer AI Factory Logo"
+                        class="h-10 w-auto"
+                    />
+                    <span
+                        class="text-xl font-semibold text-white hidden sm:inline"
+                        >Mimer AI Factory</span
+                    >
+                </a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a
+                        href="#"
+                        class="text-slate-300 hover:text-white transition-colors"
+                        >Events & Learning</a
+                    >
+                    <a
+                        href="#"
+                        class="text-slate-300 hover:text-white transition-colors"
+                        >Services</a
+                    >
+                    <a
+                        href="#"
+                        class="text-slate-300 hover:text-white transition-colors"
+                        >Success stories</a
+                    >
+                    <a
+                        href="#"
+                        class="text-slate-300 hover:text-white transition-colors"
+                        >News & blog</a
+                    >
+                    <a
+                        href="#"
+                        class="text-slate-300 hover:text-white transition-colors"
+                        >About</a
+                    >
+                    <a
+                        href="#"
+                        class="text-slate-300 hover:text-white transition-colors"
+                        >Contact us</a
+                    >
+                </nav>
+                <a
+                    href="#"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                    >Get Access</a
+                >
+            </div>
+        </header>
 
-    <!-- Desktop Header -->
-    <header class="header header--desktop">
-        <a href="#" aria-label="Mimer AI Factory">
-            <img src="https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-2048x869.png" alt="Mimer AI Factory Logo" class="logo logo--desktop">
-        </a>
-        <nav class="nav nav--desktop">
-            <a href="#" class="nav-link">Events & Learning</a>
-            <a href="#" class="nav-link">Services</a>
-            <a href="#" class="nav-link">Success stories</a>
-            <a href="#" class="nav-link">News & blog</a>
-            <div class="dropdown">
-                <a href="#" class="nav-link dropdown-toggle">About</a>
-                <div class="dropdown-menu">
-                    <a href="#" class="nav-link dropdown-item">Team</a>
-                    <a href="#" class="nav-link dropdown-item">Careers</a>
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <section>{% block content %} {% endblock content %}</section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-slate-800 border-t border-slate-700">
+            <div class="container mx-auto px-4 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <a href="/" class="flex items-center space-x-2 mb-4">
+                            <img
+                                src="https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-2048x869.png"
+                                alt="Mimer AI Factory Logo"
+                                class="h-10 w-auto"
+                            />
+                        </a>
+                    </div>
+                    <div>
+                        <a
+                            href="https://linkedin.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-slate-400 hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-4">
+                            Quick links
+                        </h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-slate-400 hover:text-white transition-colors"
+                                    >Events & Learning</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-slate-400 hover:text-white transition-colors"
+                                    >Services</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-slate-400 hover:text-white transition-colors"
+                                    >Success stories</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-slate-400 hover:text-white transition-colors"
+                                    >News & blog</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-slate-400 hover:text-white transition-colors"
+                                    >About</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-slate-400 hover:text-white transition-colors"
+                                    >Contact us</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-4">
+                            Contact Info
+                        </h3>
+                        <p class="text-slate-400">info@mimer-ai.eu</p>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-slate-700 mt-8 pt-8 text-center text-slate-500"
+                >
+                    <p>&copy; 2026 Mimer AI Factory. All rights reserved.</p>
                 </div>
             </div>
-            <a href="#" class="nav-link">Contact us</a>
-        </nav>
-        <a href="#" class="accent-button">Get Access</a>
-    </header>
+        </footer>
 
-    <!-- Main Content -->
-    <main>
-        <section class="section">
-            {% block content %} {% endblock content %}
-        </section>
-    </main>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const mobileToggle = document.getElementById("mobile-toggle");
+                const mobileMenu = document.getElementById("mobile-menu");
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__top">
-            <div class="footer__col">
-                <a href="#" aria-label="Mimer AI Factory">
-                    <img src="https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-2048x869.png" alt="Mimer AI Factory Logo" class="logo logo--footer">
-                </a>
-            </div>
-            <div class="footer__col">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
-                    </svg>
-                </a>
-            </div>
-            <div class="footer__col">
-                <h3 class="footer__heading">Quick links</h3>
-                <ul class="footer__list">
-                    <li class="footer__list-item"><a href="#" class="nav-link">Events & Learning</a></li>
-                    <li class="footer__list-item"><a href="#" class="nav-link">Services</a></li>
-                    <li class="footer__list-item"><a href="#" class="nav-link">Success stories</a></li>
-                    <li class="footer__list-item"><a href="#" class="nav-link">News & blog</a></li>
-                    <li class="footer__list-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="footer__list-item"><a href="#" class="nav-link">Contact us</a></li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <h3 class="footer__heading">Contact Info</h3>
-                <p class="nav-link">info@mimer-ai.eu</p>
-            </div>
-        </div>
-        <div class="footer__bottom">
-            <p>&copy; 2026 Mimer AI Factory. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            mobileToggle.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
+                mobileToggle.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("active");
+                });
             });
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold text-white mb-2">Lessons</h1>
+    <p class="text-slate-400">Browse our collection of AI learning materials</p>
+</div>
+
+<!-- Filters -->
+<div class="flex flex-wrap gap-4 mb-8 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+    <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-slate-400">Skill:</label>
+        <select id="filter-skill" class="bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+            <option value="">All</option>
+            <option value="ai">AI</option>
+            <option value="data">Data</option>
+            <option value="programming">Programming</option>
+        </select>
+    </div>
+    <div class="flex flex-col gap-1">
+        <label class="text-sm font-medium text-slate-400">Difficulty:</label>
+        <select id="filter-difficulty" class="bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+            <option value="">All</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select>
+    </div>
+</div>
+
+<!-- Lesson Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="lesson-grid">
+    {% for page in section.pages %}
+    <article
+        class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-slate-600 transition-all duration-200 group"
+        data-title="{{ page.title }}"
+        data-description="{{ page.description | default(value="") }}"
+    >
+        <h2 class="text-xl font-semibold text-white mb-3 group-hover:text-indigo-400 transition-colors">{{ page.title }}</h2>
+        <p class="text-slate-400 mb-4">{{ page.description | default(value="No description available") }}</p>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-indigo-600 text-white">AI</span>
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-600 text-white">Beginner</span>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
