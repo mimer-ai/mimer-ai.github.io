@@ -38,21 +38,21 @@
                 </h3>
                 <ul class="space-y-2">
                     {% for link in config.extra.footer.quick_links %}
-                        <li>
-                            <a
-                                href="{{ link.url }}"
-                                class="text-slate-400 hover:text-white transition-colors"
-                                >{{ link.name }}</a
-                            >
-                        </li>
+                    <li>
+                        <a
+                            href="{{ link.url }}"
+                            class="text-slate-400 hover:text-white transition-colors"
+                            >{{ link.name }}</a
+                        >
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
             <div>
-                <h3 class="text-white font-semibold mb-4">
-                    Contact Info
-                </h3>
-                <p class="text-slate-400">info@mimer-ai.eu</p>
+                <h3 class="text-white font-semibold mb-4">Contact Info</h3>
+                <p class="text-slate-400">
+                    <a href="mailto:info@mimer-ai.eu">info@mimer-ai.eu</a>
+                </p>
             </div>
         </div>
         <div

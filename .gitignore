@@ -1,2 +1,4 @@
 public/
 _build
+node_modules
+static/css/*.dist.css

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,25 +11,10 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            sans: ["Inter", "sans-serif"],
-                        },
-                    },
-                },
-            };
-        </script>
-        <!--<script src="/js/lunr.min.js"></script>-->
-        <!--<script src="https://unpkg.com/lunr/lunr.js"></script>-->
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.4.1"></script>
-        <!--<script src="/js/search.js"></script>-->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="/css/main.dist.css" />
     </head>
-    <body class="bg-slate-900 text-gray-100 font-sans antialiased min-h-screen flex flex-col">
+    <body class="dark bg-slate-900 text-gray-100 font-sans antialiased min-h-screen flex flex-col">
         {% include "header.html" %}
 
         <!-- Main Content -->

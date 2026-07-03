@@ -1,0 +1,16 @@
+{
+  "name": "mimer-ai-site",
+  "version": "1.0.0",
+  "description": "Mimer AI Factory lessons site",
+  "type": "module",
+  "scripts": {
+    "build": "tailwindcss -i ./css/main.css -o ./static/css/main.dist.css --minify",
+    "watch": "tailwindcss -i ./css/main.css -o ./static/css/main.dist.css --watch",
+    "serve": "zola serve"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "tailwindcss": "^4.0.0"
+  }
+}
