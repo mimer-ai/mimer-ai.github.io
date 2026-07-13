@@ -4,7 +4,7 @@
     {% for skill in page.taxonomies.skill %}
         {% set skill_lower = skill | lower %}
         <span
-            class="px-3 py-1 rounded-md text-xs font-medium text-white {{ config.extra.badge_colors.skill[skill_lower] | default(value="bg-indigo-700") }} badge-skill"
+            class="px-3 py-1 rounded-md text-xs font-medium text-white {{ config.extra.badge_colors.skill[skill_lower] | default(value="bg-indigo-700") }} badge-skill h-6 min-w-[80px] flex items-center justify-center"
             data-skill="{{ skill | lower }}"
         >{{ skill }}</span>
     {% endfor %}
@@ -18,7 +18,7 @@
         {% for difficulty in page.taxonomies.difficulty %}
             {% set diff_lower = difficulty | lower %}
             <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-600 badge-difficulty"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-600 badge-difficulty h-6 min-w-[140px]"
                 data-difficulty="{{ difficulty | lower }}"
             >
                 <span class="text-slate-400 mr-1.5">difficulty:</span>
@@ -34,7 +34,7 @@
         {% for maturity in page.taxonomies.maturity %}
             {% set mat_lower = maturity | lower %}
             <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-600 badge-maturity"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-600 badge-maturity h-6 min-w-[120px]"
                 data-maturity="{{ maturity | lower }}"
             >
                 <span class="text-slate-400 mr-1.5">maturity:</span>
