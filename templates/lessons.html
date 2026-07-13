@@ -54,7 +54,7 @@
 </div>
 
 <!-- Lesson Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="lesson-grid">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-dense" id="lesson-grid">
     {% for page in section.pages | sort(attribute="title") %}
     <a href="{{ page.permalink | safe }}" class="block no-underline group">
         <article
@@ -79,9 +79,10 @@ function filterLessons() {
     const difficultyFilter = document.getElementById('filter-difficulty').value.toLowerCase();
     const maturityFilter = document.getElementById('filter-maturity').value.toLowerCase();
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
-    const lessons = document.querySelectorAll('#lesson-grid article');
+    const links = document.querySelectorAll('#lesson-grid > a');
 
-    lessons.forEach(lesson => {
+    links.forEach(link => {
+        const article = link.querySelector('article');
         let skillMatch = !skillFilter;
         let difficultyMatch = !difficultyFilter;
         let maturityMatch = !maturityFilter;
@@ -89,9 +90,9 @@ function filterLessons() {
 
         // Check taxonomy filters
         if (!skillMatch || !difficultyMatch || !maturityMatch) {
-            const skillBadges = lesson.querySelectorAll('[data-skill]');
-            const difficultyBadges = lesson.querySelectorAll('[data-difficulty]');
-            const maturityBadges = lesson.querySelectorAll('[data-maturity]');
+            const skillBadges = article.querySelectorAll('[data-skill]');
+            const difficultyBadges = article.querySelectorAll('[data-difficulty]');
+            const maturityBadges = article.querySelectorAll('[data-maturity]');
 
             if (skillFilter) {
                 skillBadges.forEach(b => {
@@ -112,15 +113,15 @@ function filterLessons() {
 
         // Check text search - simple string matching on title and description
         if (searchQuery) {
-            const title = lesson.getAttribute('data-title').toLowerCase();
-            const description = lesson.getAttribute('data-description').toLowerCase();
+            const title = article.getAttribute('data-title').toLowerCase();
+            const description = article.getAttribute('data-description').toLowerCase();
             searchMatch = title.includes(searchQuery) || description.includes(searchQuery);
         }
 
         if (skillMatch && difficultyMatch && maturityMatch && searchMatch) {
-            lesson.style.display = '';
+            link.style.display = '';
         } else {
-            lesson.style.display = 'none';
+            link.style.display = 'none';
         }
     });
 }
