@@ -1,5 +1,5 @@
 <header
-    class="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-800"
+    class="{{ config.extra.colors.bg_primary_alpha }} backdrop-blur-sm sticky top-0 z-50 {{ config.extra.colors.border_primary }}"
 >
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
         <span class="flex items-center space-x-2">
@@ -11,7 +11,7 @@
                 />
             </a>
             <a href="{{ config.extra.nav.library_url }}">
-                <span class="text-xl font-semibold text-white hidden sm:inline"
+                <span class="text-xl font-semibold {{ config.extra.colors.text_primary }} hidden sm:inline"
                     >{{ config.extra.nav.library_text }}</span
                 >
             </a>
@@ -24,7 +24,7 @@
                     <div class="relative group">
                         <a
                             href="{{ link.url }}"
-                            class="text-slate-300 hover:text-white transition-colors flex items-center"
+                            class="{{ config.extra.colors.text_tertiary }} hover:{{ config.extra.colors.text_primary }} transition-colors flex items-center"
                         >
                             {{ link.name }}
                             <svg
@@ -42,12 +42,12 @@
                             </svg>
                         </a>
                         <div
-                            class="absolute top-full left-0 bg-slate-800 rounded-lg shadow-xl min-w-[200px] py-2 hidden group-hover:block z-50"
+                            class="absolute top-full left-0 {{ config.extra.colors.bg_secondary }} rounded-lg {{ config.extra.colors.shadow_primary }} min-w-[200px] py-2 hidden group-hover:block z-50"
                         >
                             {% for sub_link in link.sub_links %}
                                 <a
                                     href="{{ sub_link.url }}"
-                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+                                    class="block px-4 py-2 text-sm {{ config.extra.colors.text_tertiary }} hover:{{ config.extra.colors.bg_tertiary }} hover:{{ config.extra.colors.text_primary }} transition-colors"
                                     >{{ sub_link.name }}</a
                                 >
                             {% endfor %}
@@ -57,7 +57,7 @@
                     {# Simple link #}
                     <a
                         href="{{ link.url }}"
-                        class="text-slate-300 hover:text-white transition-colors"
+                        class="{{ config.extra.colors.text_tertiary }} hover:{{ config.extra.colors.text_primary }} transition-colors"
                         >{{ link.name }}</a
                     >
                 {% endif %}
@@ -65,7 +65,7 @@
         </nav>
         <a
             href="{{ config.extra.nav.get_access_url }}"
-            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+            class="{{ config.extra.colors.accent_primary }} hover:{{ config.extra.colors.accent_primary_hover }} {{ config.extra.colors.text_primary }} px-4 py-2 rounded-lg font-medium transition-colors"
             >Get Access</a
         >
     </div>

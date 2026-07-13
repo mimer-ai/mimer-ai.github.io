@@ -18,10 +18,10 @@
         {% for difficulty in page.taxonomies.difficulty %}
             {% set diff_lower = difficulty | lower %}
             <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-600 badge-difficulty"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium {{ config.extra.colors.bg_secondary }} {{ config.extra.colors.text_tertiary }} {{ config.extra.colors.border_tertiary }} badge-difficulty"
                 data-difficulty="{{ difficulty | lower }}"
             >
-                <span class="text-slate-400 mr-1.5">difficulty:</span>
+                <span class="{{ config.extra.colors.text_quaternary }} mr-1.5">difficulty:</span>
                 <span
                     class="font-semibold {{ config.extra.badge_colors.difficulty[diff_lower] | default(value="text-emerald-400") }}"
                 >{{ difficulty }}</span>
@@ -34,10 +34,10 @@
         {% for maturity in page.taxonomies.maturity %}
             {% set mat_lower = maturity | lower %}
             <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-800 text-slate-300 border border-slate-600 badge-maturity"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium {{ config.extra.colors.bg_secondary }} {{ config.extra.colors.text_tertiary }} {{ config.extra.colors.border_tertiary }} badge-maturity"
                 data-maturity="{{ maturity | lower }}"
             >
-                <span class="text-slate-400 mr-1.5">maturity:</span>
+                <span class="{{ config.extra.colors.text_quaternary }} mr-1.5">maturity:</span>
                 <span
                     class="font-semibold {{ config.extra.badge_colors.maturity[mat_lower] | default(value="text-blue-500") }}"
                 >{{ maturity }}</span>

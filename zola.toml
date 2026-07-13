@@ -23,6 +23,7 @@ index_format = "fuse_javascript" # or "fuse_json"
 
 [extra]
 # Put all your custom variables here
+
 # Define badge colors for Skill, Difficulty Level, and Maturity
 badge_colors = {
     skill = {
@@ -43,6 +44,41 @@ badge_colors = {
     difficulty = { beginner = "text-emerald-400", intermediate = "text-amber-400", advanced = "text-red-400" },
     maturity = { alpha = "text-sky-400", beta = "text-blue-400", stable = "text-blue-500" }
 }
+
+[extra.colors]
+# Color palette - Tailwind CSS color classes used throughout the site
+# Background colors
+bg_primary = "bg-slate-900"
+bg_primary_alpha = "bg-slate-900/80"
+bg_secondary = "bg-slate-800"
+bg_secondary_alpha = "bg-slate-800/50"
+bg_tertiary = "bg-slate-700"
+bg_quaternary = "bg-slate-600"
+bg_card = "bg-[#122855]"
+
+# Accent colors
+accent_primary = "bg-indigo-600"
+accent_primary_hover = "bg-indigo-700"
+accent_text_hover = "text-indigo-400"
+
+# Border colors
+border_primary = "border-slate-800"
+border_secondary = "border-slate-700"
+border_tertiary = "border-slate-600"
+
+# Text colors
+text_primary = "text-white"
+text_secondary = "text-gray-100"
+text_tertiary = "text-slate-300"
+text_quaternary = "text-slate-400"
+text_quinary = "text-slate-500"
+
+# Focus colors
+focus_ring = "focus:ring-indigo-500"
+
+# Shadow colors
+shadow_primary = "shadow-xl"
+shadow_hover = "group-hover:shadow-slate-400/20"
 
 # Navigation configuration
 [extra.nav]

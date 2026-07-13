@@ -147,10 +147,19 @@ external_url = "https://learn.mimer-ai.eu/lesson-slug/"
 
 **Global (config.extra):**
 ```toml
+# Color palette for Tailwind CSS classes
+colors = {
+    bg_primary = "bg-slate-900",
+    text_primary = "text-white",
+    accent_primary = "bg-indigo-600",
+    # ... etc
+}
+
+# Badge colors (separate from main color palette)
 badge_colors = {
-    skill = { ai = "#6366f1", data = "#4f46e5", programming = "#8b5cf6" },
-    difficulty = { beginner = "#10b981", intermediate = "#f59e0b", advanced = "#ef4444" },
-    maturity = { alpha = "#93c5fd", beta = "#60a5fa", stable = "#2563eb" }
+    skill = { ai = "bg-indigo-700", data = "bg-sky-700", programming = "bg-violet-700" },
+    difficulty = { beginner = "text-emerald-400", intermediate = "text-amber-400", advanced = "text-red-400" },
+    maturity = { alpha = "text-sky-400", beta = "text-blue-400", stable = "text-blue-500" }
 }
 ```
 
@@ -190,12 +199,13 @@ Lessons link to external URLs defined in the `external_url` front matter field. 
 
 ## Styling
 
-- **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/) via CDN
+- **CSS Framework**: [Tailwind CSS](https://tailwindcss.com/) via CDN (v4)
 - **Font**: Inter from Google Fonts
 - **Color Scheme**: Dark theme with slate backgrounds
-- **Card Colors**: Lesson cards use `#122855` background
+- **Card Colors**: Lesson cards use `#122855` background (defined as `bg_card` in config)
 - **Hover Effect**: Silver glow on lesson cards
 - **Button Style**: Indigo buttons with hover states
+- **Color Configuration**: All Tailwind color classes are centralized in `[extra.colors]` in `zola.toml` and referenced in templates via `{{ config.extra.colors.color_name }}`
 
 ## Configuration
 
@@ -203,8 +213,11 @@ Edit `zola.toml` to modify:
 - `base_url`: Site URL
 - `taxonomies`: Taxonomy definitions
 - `[extra]`: Custom variables (badge colors, etc.)
+- `[extra.colors]`: Color palette for Tailwind CSS classes (bg_primary, text_primary, accent_primary, etc.)
 - `[markdown]`: Markdown rendering options
 - `[search]`: Search index format
+
+**Note on Colors**: All Tailwind CSS color classes are defined in `[extra.colors]` and referenced in templates using `{{ config.extra.colors.color_name }}`. This centralizes the color palette. The site uses Tailwind v4 via CDN, which supports dynamic class interpolation.
 
 ## Deployment
 
