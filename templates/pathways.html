@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="mb-8">
+    <h1 class="text-3xl font-bold {{ config.extra.colors.text_primary }} mb-2">Learning Pathways</h1>
+    <p class="{{ config.extra.colors.text_subtle }}">Structured learning journeys through our AI curriculum</p>
+</div>
+
+<!-- Under Construction Banner -->
+<div class="{{ config.extra.colors.bg_secondary }} border {{ config.extra.colors.border_input }} rounded-xl p-8 text-center">
+    <h2 class="text-2xl font-semibold {{ config.extra.colors.text_primary }} mb-2">Under Construction</h2>
+    <p class="{{ config.extra.colors.text_subtle }}">Our learning pathways are coming soon. Check back later!</p>
+</div>
+{% endblock %}
