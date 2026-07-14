@@ -57,10 +57,15 @@
             {% endfor %}
         </nav>
         <div class="flex items-center space-x-4">
-            <div class="relative">
+            <a
+                href="{{ config.extra.nav.get_access_url }}"
+                class="{{ config.extra.colors.accent_primary }} hover:{{ config.extra.colors.accent_primary_hover }} {{ config.extra.colors.text_primary }} px-4 py-2 rounded-lg font-medium transition-colors"
+                >Get Access</a
+            >
+            <div class="relative group">
                 <button
                     id="mobile-toggle"
-                    class="p-2 rounded-lg {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors lg:hidden"
+                    class="p-2 rounded-lg {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors"
                     aria-label="Menu"
                 >
                     <svg
@@ -106,11 +111,6 @@
                     </div>
                 </div>
             </div>
-            <a
-                href="{{ config.extra.nav.get_access_url }}"
-                class="{{ config.extra.colors.accent_primary }} hover:{{ config.extra.colors.accent_primary_hover }} {{ config.extra.colors.text_primary }} px-4 py-2 rounded-lg font-medium transition-colors"
-                >Get Access</a
-            >
         </div>
     </div>
 </header>
