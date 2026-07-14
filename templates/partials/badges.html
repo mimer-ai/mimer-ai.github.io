@@ -1,18 +1,20 @@
 {# Badges partial template - renders skill, difficulty, and maturity badges #}
 {# Skill badges - rounded rectangles, inline #}
 {% if page.taxonomies and page.taxonomies.skill %}
+<div class="flex flex-wrap gap-2 items-center">
     {% for skill in page.taxonomies.skill %}
         {% set skill_lower = skill | lower %}
         <span
-            class="px-3 py-1 rounded-md text-xs font-medium text-white {{ config.extra.badge_colors.skill[skill_lower] | default(value="bg-indigo-700") }} badge-skill h-6 min-w-[80px] flex items-center justify-center"
+            class="px-3 py-0.5 rounded-md text-xs font-medium text-white {{ config.extra.badge_colors.skill[skill_lower] | default(value="bg-indigo-700") }} badge-skill h-6 min-w-[80px] inline-flex items-center justify-center"
             data-skill="{{ skill | lower }}"
         >{{ skill }}</span>
     {% endfor %}
+</div>
 {% endif %}
 
 {# Difficulty and maturity badges - shields.io style on separate row #}
 {% if page.taxonomies and (page.taxonomies.difficulty or page.taxonomies.maturity) %}
-<div class="flex flex-wrap gap-2 mt-2">
+<div class="flex flex-wrap gap-2 items-center">
     {# Difficulty badges #}
     {% if page.taxonomies and page.taxonomies.difficulty %}
         {% for difficulty in page.taxonomies.difficulty %}
