@@ -47,38 +47,39 @@ badge_colors = {
 
 [extra.colors]
 # Color palette - Tailwind CSS color classes used throughout the site
+
 # Background colors
-bg_primary = "bg-slate-900"
-bg_primary_alpha = "bg-slate-900/80"
-bg_secondary = "bg-slate-800"
-bg_secondary_alpha = "bg-slate-800/50"
-bg_tertiary = "bg-slate-700"
-bg_quaternary = "bg-slate-600"
-bg_card = "bg-[#122855]"
+bg_primary = "bg-slate-900"            # Main page background
+bg_primary_alpha = "bg-slate-900/80"   # Semi-transparent page background overlay
+bg_secondary = "bg-slate-800"          # Secondary container backgrounds (header, footer, filter panel)
+bg_secondary_alpha = "bg-slate-800/50" # Semi-transparent secondary background
+bg_interactive = "bg-slate-700"        # Interactive element backgrounds (Clear Filters button)
+bg_interactive_hover = "bg-slate-600"  # Interactive element hover backgrounds
+bg_card = "bg-[#122855]"               # Lesson card background color
 
 # Accent colors
-accent_primary = "bg-indigo-600"
-accent_primary_hover = "bg-indigo-700"
-accent_text_hover = "text-indigo-400"
+accent_primary = "bg-indigo-600"       # Primary accent buttons (Get Access, Show the lesson)
+accent_primary_hover = "bg-indigo-700" # Primary accent button hover state
+accent_text_hover = "text-indigo-400"  # Accent text color on hover
 
 # Border colors
-border_primary = "border border-slate-800"
-border_secondary = "border border-slate-700"
-border_tertiary = "border border-slate-600"
+border_primary = "border border-slate-800"   # Primary borders (header)
+border_secondary = "border border-slate-700" # Secondary borders (footer, filter panel, lesson cards)
+border_input = "border border-slate-600"     # Input and badge borders (filter dropdowns, difficulty/maturity badges)
 
 # Text colors
-text_primary = "text-white"
-text_secondary = "text-gray-100"
-text_tertiary = "text-slate-300"
-text_quaternary = "text-slate-400"
-text_quinary = "text-slate-500"
+text_primary = "text-white"            # Primary text (headings, titles, main content)
+text_secondary = "text-gray-100"       # Secondary text (subheadings)
+text_nav = "text-slate-300"           # Navigation text (header nav links, footer social icon)
+text_subtle = "text-slate-400"        # Subtle text (descriptions, filter labels, badge labels, footer links)
+text_copyright = "text-slate-500"     # Copyright text (footer bottom text)
 
 # Focus colors
-focus_ring = "focus:ring-indigo-500"
+focus_ring = "focus:ring-indigo-500"  # Focus ring color for interactive elements
 
 # Shadow colors
-shadow_primary = "shadow-xl"
-shadow_hover = "group-hover:shadow-slate-400/20"
+shadow_primary = "shadow-xl"                 # Primary shadow (lesson cards)
+shadow_hover = "group-hover:shadow-slate-400/20" # Hover shadow effect (lesson cards)
 
 # Navigation configuration
 [extra.nav]

@@ -24,7 +24,7 @@
                     <div class="relative group">
                         <a
                             href="{{ link.url }}"
-                            class="{{ config.extra.colors.text_tertiary }} hover:{{ config.extra.colors.text_primary }} transition-colors flex items-center"
+                            class="{{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors flex items-center"
                         >
                             {{ link.name }}
                             <svg
@@ -47,7 +47,7 @@
                             {% for sub_link in link.sub_links %}
                                 <a
                                     href="{{ sub_link.url }}"
-                                    class="block px-4 py-2 text-sm {{ config.extra.colors.text_tertiary }} hover:{{ config.extra.colors.bg_tertiary }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                                    class="block px-4 py-2 text-sm {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.bg_interactive }} hover:{{ config.extra.colors.text_primary }} transition-colors"
                                     >{{ sub_link.name }}</a
                                 >
                             {% endfor %}
@@ -57,7 +57,7 @@
                     {# Simple link #}
                     <a
                         href="{{ link.url }}"
-                        class="{{ config.extra.colors.text_tertiary }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                        class="{{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors"
                         >{{ link.name }}</a
                     >
                 {% endif %}

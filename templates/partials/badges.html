@@ -18,10 +18,10 @@
         {% for difficulty in page.taxonomies.difficulty %}
             {% set diff_lower = difficulty | lower %}
             <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium {{ config.extra.colors.bg_secondary }} {{ config.extra.colors.text_tertiary }} {{ config.extra.colors.border_tertiary }} badge-difficulty h-6 min-w-[140px]"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium {{ config.extra.colors.bg_secondary }} {{ config.extra.colors.text_nav }} {{ config.extra.colors.border_input }} badge-difficulty h-6 min-w-[140px]"
                 data-difficulty="{{ difficulty | lower }}"
             >
-                <span class="{{ config.extra.colors.text_quaternary }} mr-1.5">difficulty:</span>
+                <span class="{{ config.extra.colors.text_subtle }} mr-1.5">difficulty:</span>
                 <span
                     class="font-semibold {{ config.extra.badge_colors.difficulty[diff_lower] | default(value="text-emerald-400") }}"
                 >{{ difficulty }}</span>
@@ -34,10 +34,10 @@
         {% for maturity in page.taxonomies.maturity %}
             {% set mat_lower = maturity | lower %}
             <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium {{ config.extra.colors.bg_secondary }} {{ config.extra.colors.text_tertiary }} {{ config.extra.colors.border_tertiary }} badge-maturity h-6 min-w-[120px]"
+                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium {{ config.extra.colors.bg_secondary }} {{ config.extra.colors.text_nav }} {{ config.extra.colors.border_input }} badge-maturity h-6 min-w-[120px]"
                 data-maturity="{{ maturity | lower }}"
             >
-                <span class="{{ config.extra.colors.text_quaternary }} mr-1.5">maturity:</span>
+                <span class="{{ config.extra.colors.text_subtle }} mr-1.5">maturity:</span>
                 <span
                     class="font-semibold {{ config.extra.badge_colors.maturity[mat_lower] | default(value="text-blue-500") }}"
                 >{{ maturity }}</span>
