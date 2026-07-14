@@ -57,9 +57,10 @@
             {% endfor %}
         </nav>
         <div class="flex items-center space-x-4">
-            <div class="relative group">
+            <div class="relative">
                 <button
-                    class="p-2 rounded-lg {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                    id="mobile-toggle"
+                    class="p-2 rounded-lg {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors lg:hidden"
                     aria-label="Menu"
                 >
                     <svg
@@ -77,7 +78,8 @@
                     </svg>
                 </button>
                 <div
-                    class="absolute top-full right-0 {{ config.extra.colors.bg_secondary }} rounded-lg {{ config.extra.colors.shadow_primary }} min-w-[200px] py-2 hidden group-hover:block z-50"
+                    id="mobile-menu"
+                    class="absolute top-full right-0 {{ config.extra.colors.bg_secondary }} rounded-lg {{ config.extra.colors.shadow_primary }} min-w-[200px] py-2 hidden lg:group-hover:block z-50"
                 >
                     <a
                         href="/lessons/"
