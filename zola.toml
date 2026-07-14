@@ -85,10 +85,11 @@ shadow_hover = "group-hover:shadow-slate-400/20" # Hover shadow effect (lesson c
 [extra.nav]
 logo_src = "https://mimer-ai.eu/wp-content/uploads/2025/09/Mimer_white_logo-scaled.png"
 logo_alt = "The logo of Mimer AI Factory. Straight modern white lines, with one blue line in the second M."
-logo_url = "https://mimer-ai.eu"
-library_text = "Library"
-library_url = "/"
-get_access_url = "https://mimer-ai.eu/all-services/access-to-compute-resources/"
+logo_url = "/"
+
+[extra.nav.header_button]
+name = "Learn More"
+url = "https://mimer-ai.eu/"
 
 # Main header navigation links
 [[extra.nav.main_links]]
