@@ -98,6 +98,7 @@ url = "https://mimer-ai.eu/events-and-learning"
 [[extra.nav.main_links]]
 name = "Services"
 url = "#"
+mobile_url = "https://mimer-ai.eu/all-services/"
 dropdown = true
 
 [[extra.nav.main_links.sub_links]]
@@ -139,6 +140,7 @@ url = "https://mimer-ai.eu/news-and-blog/"
 [[extra.nav.main_links]]
 name = "About"
 url = "#"
+mobile_url = "https://mimer-ai.eu/about/about-mimer/"
 dropdown = true
 
 [[extra.nav.main_links.sub_links]]

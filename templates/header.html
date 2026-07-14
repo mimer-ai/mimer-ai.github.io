@@ -2,50 +2,14 @@
     class="{{ config.extra.colors.bg_primary_alpha }} backdrop-blur-sm sticky top-0 z-50 {{ config.extra.colors.border_primary }}"
 >
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-        <span class="flex items-center space-x-2">
-            <div class="relative group hidden sm:inline">
-                <button
-                    class="p-2 rounded-lg {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors"
-                    aria-label="Menu"
-                >
-                    <svg
-                        class="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"
-                        ></path>
-                    </svg>
-                </button>
-                <div
-                    class="absolute top-full left-0 {{ config.extra.colors.bg_secondary }} rounded-lg {{ config.extra.colors.shadow_primary }} min-w-[200px] py-2 hidden group-hover:block z-50"
-                >
-                    <a
-                        href="/lessons/"
-                        class="block px-4 py-2 text-sm {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.bg_interactive }} hover:{{ config.extra.colors.text_primary }} transition-colors"
-                        >Lesson Library</a
-                    >
-                    <a
-                        href="/pathways/"
-                        class="block px-4 py-2 text-sm {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.bg_interactive }} hover:{{ config.extra.colors.text_primary }} transition-colors"
-                        >Learning Pathways</a
-                    >
-                </div>
-            </div>
-            <a href="{{ config.extra.nav.logo_url }}">
-                <img
-                    src="{{ config.extra.nav.logo_src }}"
-                    alt="{{ config.extra.nav.logo_alt }}"
-                    class="h-10 w-auto"
-                />
-            </a>
-        </span>
-        <nav class="hidden md:flex items-center space-x-6">
+        <a href="{{ config.extra.nav.logo_url }}">
+            <img
+                src="{{ config.extra.nav.logo_src }}"
+                alt="{{ config.extra.nav.logo_alt }}"
+                class="h-10 w-auto"
+            />
+        </a>
+        <nav class="hidden lg:flex items-center space-x-6">
             {# Loop through main navigation links #}
             {% for link in config.extra.nav.main_links %}
                 {% if link.dropdown %}
@@ -92,10 +56,59 @@
                 {% endif %}
             {% endfor %}
         </nav>
-        <a
-            href="{{ config.extra.nav.get_access_url }}"
-            class="{{ config.extra.colors.accent_primary }} hover:{{ config.extra.colors.accent_primary_hover }} {{ config.extra.colors.text_primary }} px-4 py-2 rounded-lg font-medium transition-colors"
-            >Get Access</a
-        >
+        <div class="flex items-center space-x-4">
+            <div class="relative group">
+                <button
+                    class="p-2 rounded-lg {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                    aria-label="Menu"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        ></path>
+                    </svg>
+                </button>
+                <div
+                    class="absolute top-full right-0 {{ config.extra.colors.bg_secondary }} rounded-lg {{ config.extra.colors.shadow_primary }} min-w-[200px] py-2 hidden group-hover:block z-50"
+                >
+                    <a
+                        href="/lessons/"
+                        class="block px-4 py-2 text-sm {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.bg_interactive }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                        >Lesson Library</a
+                    >
+                    <a
+                        href="/pathways/"
+                        class="block px-4 py-2 text-sm {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.bg_interactive }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                        >Learning Pathways</a
+                    >
+                    <hr class="border {{ config.extra.colors.border_input }} mx-4 my-1 lg:hidden" />
+                    <div class="lg:hidden">
+                        {% for link in config.extra.nav.main_links %}
+                        <a
+			    {% if 'mobile_url' in link %}
+			    href="{{ link.mobile_url }}"
+			    {% else %}
+			    href="{{ link.url }}"
+			    {% endif %}
+                            class="block px-4 py-2 text-sm {{ config.extra.colors.text_nav }} hover:{{ config.extra.colors.bg_interactive }} hover:{{ config.extra.colors.text_primary }} transition-colors"
+                        >{{ link.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <a
+                href="{{ config.extra.nav.get_access_url }}"
+                class="{{ config.extra.colors.accent_primary }} hover:{{ config.extra.colors.accent_primary_hover }} {{ config.extra.colors.text_primary }} px-4 py-2 rounded-lg font-medium transition-colors"
+                >Get Access</a
+            >
+        </div>
     </div>
 </header>
