@@ -28,18 +28,18 @@ index_format = "fuse_javascript" # or "fuse_json"
 badge_colors = {
     skill = {
         ai = "bg-indigo-700",
-        gen_ai = "bg-pink-500",
-        hpc = "bg-orange-700",
-        cloud_computing = "bg-sky-700",
-        programming = "bg-violet-700",
-        julia = "bg-purple-700",
+        gen_ai = "bg-indigo-900",
+        hpc = "bg-cyan-900",
+        cloud_computing = "bg-gray-700",
+        programming = "bg-mauve-500",
+        julia = "bg-purple-900",
         data_science = "bg-cyan-700",
         life_science = "bg-emerald-700",
-        machine_learning = "bg-pink-600",
-        mlops = "bg-violet-700",
-        agentic = "bg-indigo-700",
-        pytorch = "bg-orange-700",
-        devops = "bg-teal-600"
+        machine_learning = "bg-mist-700",
+        mlops = "bg-slate-700",
+        agentic = "bg-indigo-500",
+        pytorch = "bg-blue-900",
+        devops = "bg-mauve-700"
     },
     difficulty = { beginner = "text-emerald-400", intermediate = "text-amber-400", advanced = "text-red-400" },
     maturity = { alpha = "text-sky-400", beta = "text-blue-400", stable = "text-blue-500" }
@@ -59,8 +59,8 @@ bg_card = "bg-[#122855]"               # Lesson card background color
 
 # Accent colors
 accent_primary = "bg-blue-600"       # Primary accent buttons (Get Access, Show the lesson)
-accent_primary_hover = "bg-indigo-700" # Primary accent button hover state
-accent_text_hover = "text-indigo-400"  # Accent text color on hover
+accent_primary_hover = "bg-blue-700" # Primary accent button hover state
+accent_text_hover = "text-blue-400"  # Accent text color on hover
 
 # Border colors
 border_primary = "border border-slate-800"   # Primary borders (header)
