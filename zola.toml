@@ -51,20 +51,20 @@ badge_colors = {
 # Background colors
 bg_primary = "bg-slate-900"            # Main page background
 bg_primary_alpha = "bg-slate-900/80"   # Semi-transparent page background overlay
-bg_secondary = "bg-slate-800"          # Secondary container backgrounds (header, footer, filter panel)
+bg_secondary = "bg-slate-950"          # Secondary container backgrounds (header, footer, filter panel)
 bg_secondary_alpha = "bg-slate-800/50" # Semi-transparent secondary background
 bg_interactive = "bg-slate-700"        # Interactive element backgrounds (Clear Filters button)
 bg_interactive_hover = "bg-slate-600"  # Interactive element hover backgrounds
 bg_card = "bg-[#122855]"               # Lesson card background color
 
 # Accent colors
-accent_primary = "bg-indigo-600"       # Primary accent buttons (Get Access, Show the lesson)
+accent_primary = "bg-blue-600"       # Primary accent buttons (Get Access, Show the lesson)
 accent_primary_hover = "bg-indigo-700" # Primary accent button hover state
 accent_text_hover = "text-indigo-400"  # Accent text color on hover
 
 # Border colors
 border_primary = "border border-slate-800"   # Primary borders (header)
-border_secondary = "border border-slate-700" # Secondary borders (footer, filter panel, lesson cards)
+border_secondary = "border border-slate-950" # Secondary borders (footer, filter panel, lesson cards)
 border_input = "border border-slate-600"     # Input and badge borders (filter dropdowns, difficulty/maturity badges)
 
 # Text colors
