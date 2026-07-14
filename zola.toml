@@ -62,9 +62,9 @@ accent_primary_hover = "bg-indigo-700"
 accent_text_hover = "text-indigo-400"
 
 # Border colors
-border_primary = "border-slate-800"
-border_secondary = "border-slate-700"
-border_tertiary = "border-slate-600"
+border_primary = "border border-slate-800"
+border_secondary = "border border-slate-700"
+border_tertiary = "border border-slate-600"
 
 # Text colors
 text_primary = "text-white"
