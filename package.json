@@ -4,6 +4,7 @@
   "description": "Mimer AI Factory lessons site",
   "type": "module",
   "scripts": {
+    "preprepare": "mkdir -p ./static/css",
     "prepare": "cp -ar node_modules/@fontsource/poppins/files ./static/css/",
     "build": "tailwindcss -i ./css/main.css -o ./static/css/main.dist.css --minify",
     "watch": "tailwindcss -i ./css/main.css -o ./static/css/main.dist.css --watch",
